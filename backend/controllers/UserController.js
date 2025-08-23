@@ -2,6 +2,9 @@ import User from "../model/UserModel.js";
 import httpStatus from "http-status";
 import bcrypt, {hash} from 'bcrypt';
 import crypto from 'crypto'
+import HoldingsModel from "../model/HoldingsModel.js";
+import PositionsModel from "../model/PositionsModel.js";
+import OrdersModel from "../model/OrdersModel.js";
 
 export const Login = async(req, res)=>{
     try{
@@ -58,3 +61,52 @@ export const Signup=async(req, res)=>{
       res.status(500).json({message:'sign up error', error})
     }
 }
+
+export const Holdings = async (req, res) => {
+  try {
+    const allHoldings = await HoldingsModel.find({});
+    res.status(200).json(allHoldings);
+  } catch (error) {
+    console.error("Error fetching holdings:", error);
+    res.status(500).json({ message: "Failed to retrieve holdings." });
+  }
+};
+
+
+export const Positions = async (req, res) => {
+  try {
+    const allPositions = await PositionsModel.find({});
+    res.status(200).json(allPositions);
+  } catch (error) {
+    console.error("Error fetching positions:", error);
+    res.status(500).json({ message: "Unable to retrieve positions." });
+  }
+};
+
+
+export const NewOrders=async (req, res) => {
+  try {
+    const newOrders = new OrdersModel({
+      name: req.body.name,
+      qty: req.body.qty,
+      price: req.body.price,
+      mode: req.body.mode,
+    });
+
+    await newOrders.save();
+    res.send("Order saved!");
+  } catch (error) {
+    console.error("Error saving order:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+export const Orders = async (req, res) => {
+  try {
+    const allOrders = await OrdersModel.find({});
+    res.status(200).json(allOrders);
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    res.status(500).json({ message: "Unable to retrieve orders." });
+  }
+};
