@@ -48,6 +48,9 @@ function TopNav() {
             <li className="nav-item">
               <Link className="nav-link" to="/support">Support</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/tradewing"><img src="/Images/wing.jpg" alt="TradeWing logo" width="60px"/></Link>
+            </li>
           </ul>
         </div>
       </div>
