@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import VerticalGraph from "../DataDiagrams/VerticalGraph";
 import { useContext } from "react";
 import { UserDataContext } from "../context/UserContext";
+// import "./compData.css";
 
 function Holdings() {
   const [allHoldings, setAllHoldings] = useState([]);
@@ -10,12 +11,7 @@ function Holdings() {
   useEffect(() => {
     const fetchHoldings = async () => {
       try {
-        // const token = localStorage.getItem("token");
-        const res = await client.get("/allHoldings", {
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-        });
+        const res = await client.get("/allHoldings");
         setAllHoldings(res.data);
       } catch (err) {
         console.error("Error fetching holdings:", err);
