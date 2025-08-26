@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import VerticalGraph from "../DataDiagrams/VerticalGraph";
 import { useContext } from "react";
 import { UserDataContext } from "../context/UserContext";
-// import "./compData.css";
 
 function Holdings() {
   const [allHoldings, setAllHoldings] = useState([]);
