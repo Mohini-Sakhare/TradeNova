@@ -73,13 +73,6 @@ function Funds(){
             </div>
           </div>
         </div>
-
-        <div className="col">
-          <div className="commodity">
-            <p>You don't have a commodity account</p>
-            <Link className="btn btn-blue">Open Account</Link>
-          </div>
-        </div>
       </div>
     </>
   );
