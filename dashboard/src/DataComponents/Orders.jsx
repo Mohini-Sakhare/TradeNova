@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
 import { useContext } from "react";
 import { UserDataContext } from "../context/UserContext";
 
@@ -47,9 +46,9 @@ function Orders() {
             <tbody>
               {orders.map((order, index) => {
                 const typeClass = order.mode === "BUY" ? "buy" : "sell";
-                const formattedTime = new Date(
-                  order.timestamp || Date.now()
-                ).toLocaleTimeString();
+                const formattedTime = order.createdAt
+                  ? new Date(order.createdAt).toLocaleTimeString()
+                  : "—";
 
                 return (
                   <tr key={index}>
