@@ -11,12 +11,7 @@ function Positions() {
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        // const token = localStorage.getItem("token");
-        const res = await client.get("/allPositions", {
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-        });
+        const res = await client.get("/allPositions");
         setAllPositions(res.data);
       } catch (err) {
         console.error("Error fetching holdings:", err);
