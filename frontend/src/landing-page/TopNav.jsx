@@ -10,10 +10,10 @@ function TopNav() {
           <img
             src="Images/TradeNova.jpg"
             alt="logo"
-            style={{ width: "120px" }}
+            style={{ width: "100px" }}
             className="img-fluid"
           />
-          <h1 className="m-4"><u>TRADENOVA</u></h1>
+          <h2 className="m-4"><u>TRADENOVA</u></h2>
         </Link>
 
         {/* Toggler for Mobile */}
@@ -32,9 +32,9 @@ function TopNav() {
 
         {/* Navigation Links */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" to="/signup">Signup</Link>
+          <ul className="navbar-nav ">
+            <li className="nav-item ">
+              <Link className="nav-link" to="/signup">Signup</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
