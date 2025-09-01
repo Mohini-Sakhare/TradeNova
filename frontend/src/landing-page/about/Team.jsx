@@ -17,18 +17,17 @@ function Team() {
               alt="Portrait of Mohini Sakhare"
               className="img-fluid rounded-circle mb-3 "
               style={{
-                height: "280px",
                 width: "280px",
                 objectFit: "cover",
               }}
             />
             <h5 className="mb-1">Mohini Sakhare</h5>
-            <p className="text-muted lh-lg">Clone Creator</p>
+            <p className="text-muted lh-lg">TradeNova Creator</p>
           </div>
         </div>
         <div className="col-12 col-md-7">
           <p>
-            I am a <b>Computer Engineer and a Frontend-Focused MERN Full Stack Web
+            I am a <b>Computer Engineer and Frontend-Focused MERN Full Stack Web
             Developer</b>, passionate about building intuitive, high-performance web
             applications.
           </p>
