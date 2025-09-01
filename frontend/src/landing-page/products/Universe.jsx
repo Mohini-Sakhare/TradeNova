@@ -10,7 +10,7 @@ function Universe() {
           Want to know more about our technology stack? Check out the{" "}
           <a href="">TradeNova.tech</a> blog.
         </p>
-        <h1 className=" mb-2 fw-medium fs-2 lh-base">The Zerodha Universe</h1>
+        <h1 className=" mb-2 fw-medium fs-2 lh-base">The TradeNova Universe</h1>
         <p className="fs-6 text-muted ">
           Extend your trading and investment experience even further with our
           partner platforms
