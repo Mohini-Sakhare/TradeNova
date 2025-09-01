@@ -7,7 +7,8 @@ body {
 }
 .nav-link {
   margin-left: 50px;
-  font-size: 15px;
+  font-size: 20px;
+  color: #387ed1;
 }
 /* In all pages */
 a {
