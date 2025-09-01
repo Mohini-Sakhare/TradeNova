@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function Summary() {
+  const navigate=useNavigate();
   return (
     <>
       <div className="username">
@@ -31,12 +33,21 @@ function Summary() {
         </div>
         <hr className="divider" />
       </div>
-
       <div className="section">
         <span>
-          <p>Holdings (13)</p>
+          <button className="btn btn-red" onClick={()=>navigate("/orders")}>Orders</button>
         </span>
-
+      </div>
+      <div className="section">
+        <span>
+          <button className="btn btn-green" onClick={()=>navigate("/holdings")}>Holdings</button>
+        </span>
+      
+      <div className="section">
+        <span>
+          <button className="btn btn-blue" onClick={()=>navigate("/positions")}>Positions</button>
+        </span>
+      </div>
         <div className="data">
           <div className="first">
             <h3 className="profit">
