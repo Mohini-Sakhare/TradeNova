@@ -41,7 +41,8 @@ code {
 }
 
 .btn {
- width: 1000px;
+ width: 200px;
+ text-align: center;
  font-size: 18px;
   text-decoration: none;
   padding: 10px 20px;
@@ -49,7 +50,6 @@ code {
   color: #000;
   margin-right: 2px;
   margin-left: 2px;
-  
 }
 
 .btn-green {
@@ -131,10 +131,12 @@ code {
 
 .btn-blue:hover {
   background: #74a7fa;
+  color: #000;
 }
 
 .btn-green:hover {
   background: #7bdd7f;
+  color: #000;
 }
 
 /* css for Holdings, positions, Orders*/
