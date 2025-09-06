@@ -1,49 +1,49 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom"
 import httpStatus from "http-status";
 
-
 export const UserDataContext = createContext();
-
 
 export const UserContext = ({children})=>{
 
-
+ 
   const client = axios.create({
     baseURL:'http://localhost:3001/api/user'
   })
-
+  
+  const [userData, setUserData]=useState(null);
   const navigate=useNavigate();
 
-  const handleRegister = async(username, email, password) =>{
-    try{
-        let request = await client.post("/signup",{
-            username:username,
-            email:email,
-            password:password
-        })
+  const handleRegister = async (username, email, password) => {
+  try {
+    const response = await client.post("/signup", {
+      username,
+      email,
+      password
+    });
 
-        if(request.status === httpStatus.CREATED){
-            return request.data.message;
-        }
-    }catch(err){
-       console.log(err);
+    if (response.status === httpStatus.CREATED) {
+      return response.data; // return full data object
     }
+  } catch (err) {
+    console.error("Signup error:", err);
+    throw err;
   }
+};
 
   const handleLogin = async (email, password) =>{
     try{
-        let request = await client.post('/login',{
+        const response = await client.post('/login',{
             email:email,
             password:password
         });
 
-        console.log(request.data);
+        console.log(response.data);
 
-        if(request.status === httpStatus.OK){
-            localStorage.setItem("token", request.data.token);
-            navigate("/")
+        if(response.status === httpStatus.OK){
+            localStorage.setItem("token", response.data.token);
+            return response.data;
         }
     }catch(err){
         console.log(err);
@@ -51,7 +51,7 @@ export const UserContext = ({children})=>{
   }
 
   const data = {
-    handleRegister, handleLogin, client
+    handleRegister, handleLogin, client, userData, setUserData
   }
 
   return(
