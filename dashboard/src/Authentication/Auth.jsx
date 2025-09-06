@@ -12,7 +12,7 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const { handleRegister, handleLogin } = useContext(UserDataContext);
+  const { handleRegister, handleLogin, setUserData } = useContext(UserDataContext);
   const navigate = useNavigate();
 
   const handleAuth = async (e) => {
@@ -21,6 +21,7 @@ function Signup() {
       if (activeTab === 'login') {
         const result = await handleLogin(email, password);
         console.log(result);
+        setUserData(result.data);
         navigate('/home');
       } else {
         const result = await handleRegister(username, email, password);
@@ -30,10 +31,12 @@ function Signup() {
         setPassword('');
         setError('');
         setActiveTab('login');
+        setUserData(result.data)
         navigate('/home');
       }
     } catch (err) {
       console.log(err);
+      setUserData(null);
       const message = err.response?.data?.message || 'Something went wrong';
       setError(message);
     }
@@ -45,7 +48,7 @@ function Signup() {
         <div className="auth-tabs">
           <div
             className={`auth-tab ${activeTab === 'signup' ? 'active' : ''}`}
-            onClick={() => setActiveTab('signup')}
+            onClick={() => setActiveTab('signup')} 
           >
             Sign Up
           </div>
