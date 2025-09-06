@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 
+
 function Menu({ userEmail }) {
+  
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
@@ -15,6 +17,7 @@ function Menu({ userEmail }) {
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
+ 
 
   return (
     <div className="menu-container">
@@ -24,25 +27,26 @@ function Menu({ userEmail }) {
       </div>
 
       <div className="menus">
-        <ul>
+        
+          <ul>
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/"
-              onClick={() => handleMenuClick(0)}
+              to="/home"
+              onClick={() => handleMenuClick(1)}
             >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
-                Dashboard
+              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
+                Summary
               </p>
             </Link>
           </li>
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/orders"
-              onClick={() => handleMenuClick(1)}
+              to="/home/orders"
+              onClick={() => handleMenuClick(2)}
             >
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
+              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
                 Orders
               </p>
             </Link>
@@ -50,10 +54,10 @@ function Menu({ userEmail }) {
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/holdings"
-              onClick={() => handleMenuClick(2)}
+              to="/home/holdings"
+              onClick={() => handleMenuClick(3)}
             >
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
+              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
                 Holdings
               </p>
             </Link>
@@ -61,10 +65,10 @@ function Menu({ userEmail }) {
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/positions"
-              onClick={() => handleMenuClick(3)}
+              to="/home/positions"
+              onClick={() => handleMenuClick(4)}
             >
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
+              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
                 Positions
               </p>
             </Link>
@@ -72,26 +76,16 @@ function Menu({ userEmail }) {
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="/funds"
-              onClick={() => handleMenuClick(4)}
+              to="/home/funds"
+              onClick={() => handleMenuClick(5)}
             >
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
+              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
                 Funds
               </p>
             </Link>
           </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/auth"
-              onClick={() => handleMenuClick(6)}
-            >
-              <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>
-                Sign Up
-              </p>
-            </Link>
-          </li>
         </ul>
+        
         <div className="profile" onClick={() => handleProfileClick}>
           <div className="avatar">TW</div>
           <p className="username">{userEmail ? userEmail : "USERID"}</p>
