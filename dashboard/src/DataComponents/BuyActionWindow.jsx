@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GeneralContext from "../context/GeneralContext";
 import "./ActionWindow.css";
 import { UserDataContext } from "../context/UserContext";
@@ -12,6 +12,8 @@ function BuyActionWindow({ uid}) {
 
   const { client } = useContext(UserDataContext);
   const { closeBuyWindow } = useContext(GeneralContext);
+   
+  const navigate=useNavigate();
 
   useEffect(() => {
     const credit = Number(stockQuantity) * Number(stockPrice);
@@ -67,7 +69,12 @@ function BuyActionWindow({ uid}) {
       <div className="buttons">
         <span>Expected Credit ₹{expectedCredit.toFixed(2)}</span>
         <div>
-          <Link className="btn btn-blue" onClick={handleBuyClick}>
+          <Link className="btn btn-blue" 
+          onClick={()=>{
+             handleBuyClick()
+             navigate("/home/orders")
+          }
+          }>
             Buy
           </Link>
           <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
