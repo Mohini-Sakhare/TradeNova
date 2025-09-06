@@ -35,17 +35,17 @@ function Summary() {
       </div>
       <div className="section">
         <span>
-          <button className="btn btn-red" onClick={()=>navigate("/orders")}>Orders</button>
+          <button className="btn btn-red" onClick={()=>navigate("/home/orders")}>Orders</button>
         </span>
       </div>
       <div className="section">
         <span>
-          <button className="btn btn-green" onClick={()=>navigate("/holdings")}>Holdings</button>
+          <button className="btn btn-green" onClick={()=>navigate("/home/holdings")}>Holdings</button>
         </span>
       
       <div className="section">
         <span>
-          <button className="btn btn-blue" onClick={()=>navigate("/positions")}>Positions</button>
+          <button className="btn btn-blue" onClick={()=>navigate("/home/positions")}>Positions</button>
         </span>
       </div>
         <div className="data">
