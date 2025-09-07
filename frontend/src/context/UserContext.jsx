@@ -11,7 +11,7 @@ export const UserContext = ({children})=>{
 
 
   const client = axios.create({
-    baseURL:'http://localhost:3001/api/user'
+    baseURL:'https://tradenova-backend.onrender.com'
   })
 
   const navigate=useNavigate();
