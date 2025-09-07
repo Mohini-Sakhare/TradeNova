@@ -10,7 +10,7 @@ function Holdings() {
   useEffect(() => {
     const fetchHoldings = async () => {
       try {
-        const res = await client.get("/allHoldings");
+        const res = await client.get("/api/user/allHoldings");
         setAllHoldings(res.data);
       } catch (err) {
         console.error("Error fetching holdings:", err);
