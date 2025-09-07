@@ -17,8 +17,8 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 app.use(cors({
-  origin:['https://tradenova-frontend-z088.onrender.com'],
-   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin:['https://tradenova-frontend-z088.onrender.com', 'https://tradenova-tradewing-frontend.onrender.com'],
+   methods: ['GET', 'POST'],
   credentials : true,
 }));
 
