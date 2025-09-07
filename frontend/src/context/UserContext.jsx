@@ -18,7 +18,7 @@ export const UserContext = ({children})=>{
 
   const handleRegister = async(username, email, password) =>{
     try{
-        let request = await client.post("/signup",{
+        let request = await client.post("/api/user/signup",{
             username:username,
             email:email,
             password:password
@@ -34,7 +34,7 @@ export const UserContext = ({children})=>{
 
   const handleLogin = async (email, password) =>{
     try{
-        let request = await client.post('/login',{
+        let request = await client.post('/api/user/login',{
             email:email,
             password:password
         });
