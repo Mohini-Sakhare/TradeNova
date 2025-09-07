@@ -43,7 +43,7 @@ export const UserContext = ({children})=>{
 
         if(request.status === httpStatus.OK){
             localStorage.setItem("token", request.data.token);
-            navigate("/")
+            navigate("https://tradenova-tradewing-frontend.onrender.com")
         }
     }catch(err){
         console.log(err);
