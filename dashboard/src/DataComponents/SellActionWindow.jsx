@@ -21,7 +21,7 @@ function SellActionWindow({ uid }){
 
   const handleSellClick = async () => {
     try {
-        await client.post("/newOrders", {
+        await client.post("/api/user/newOrders", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
