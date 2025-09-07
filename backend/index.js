@@ -18,7 +18,7 @@ const app = express();
 
 app.use(cors({
   origin:['https://tradenova-frontend-z088.onrender.com'],
-  origin:['http://localhost:5174'],
+   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials : true,
 }));
 
