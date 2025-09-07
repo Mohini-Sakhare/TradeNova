@@ -9,7 +9,7 @@ export const UserContext = ({children})=>{
 
  
   const client = axios.create({
-    baseURL:'http://localhost:3001/api/user'
+    baseURL:'https://tradenova-backend.onrender.com'
   })
   
   const [userData, setUserData]=useState(null);
@@ -17,7 +17,7 @@ export const UserContext = ({children})=>{
 
   const handleRegister = async (username, email, password) => {
   try {
-    const response = await client.post("/signup", {
+    const response = await client.post("/api/user/signup", {
       username,
       email,
       password
@@ -34,7 +34,7 @@ export const UserContext = ({children})=>{
 
   const handleLogin = async (email, password) =>{
     try{
-        const response = await client.post('/login',{
+        const response = await client.post('/api/user/login',{
             email:email,
             password:password
         });
