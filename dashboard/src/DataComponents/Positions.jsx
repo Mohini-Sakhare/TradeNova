@@ -11,7 +11,7 @@ function Positions() {
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        const res = await client.get("/allPositions");
+        const res = await client.get("/api/user/allPositions");
         setAllPositions(res.data);
       } catch (err) {
         console.error("Error fetching holdings:", err);
