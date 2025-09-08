@@ -15,7 +15,9 @@ function HeroSection() {
             </h2>
           </div>
           <div className="col-12 col-md-6 text-md-end mt-3 mt-md-0">
-            <button className="btn btn-primary" onClick={()=>navigate("/signup")}>My Tickets</button>
+            <button className="btn btn-primary" onClick={() => window.location.href = "https://tradenova-tradewing-frontend.onrender.com"}>
+             My Tickets
+            </button>
           </div>
         </div>
 
