@@ -9,7 +9,7 @@ function OpenAccount() {
           <p className="mb-4">
             Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and F&O trades.
           </p>
-          <button className="btn btn-primary fs-5 px-4 py-2">
+          <button className="btn btn-primary fs-5 px-4 py-2" onClick={() => window.location.href = "https://tradenova-tradewing-frontend.onrender.com"}>
             Sign up for free
           </button>
         </div>
