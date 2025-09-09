@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
       <TopNav/>
       <Routes>
        <Route path='/' element={<HomePage/>}></Route>
-       <Route path='/signup' element={<Signup/>}></Route>
+{/*        <Route path='/signup' element={<Signup/>}></Route> */}
        <Route path='/about' element={<About/>}></Route>
        <Route path='/products' element={<Products/>}></Route>
        <Route path='/pricing' element={<Pricing/>}></Route>
