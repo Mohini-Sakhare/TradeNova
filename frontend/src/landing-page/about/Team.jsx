@@ -46,7 +46,7 @@ function Team() {
           </p>
           <p>I am passionate about coding and built web applications.</p>
           <p>
-            Connect on <a href="">LinkedIn</a> / <a href="">GitHub</a> /{" "}
+            Connect on <a href="https://www.linkedin.com/in/mohini-sakhare-7720bb12b/">LinkedIn</a> / <a href="https://github.com/Mohini-Sakhare">GitHub</a> /{" "}
             <a href="">Portfolio</a>
           </p>
         </div>
