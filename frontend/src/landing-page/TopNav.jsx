@@ -33,9 +33,9 @@ function TopNav() {
         {/* Navigation Links */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ">
-            <li className="nav-item ">
+{/*             <li className="nav-item ">
               <Link className="nav-link" to="/signup">Signup</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
             </li>
