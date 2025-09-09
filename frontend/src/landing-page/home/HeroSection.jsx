@@ -16,7 +16,7 @@ function HeroSection() {
           <p className="mb-4">
             Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.
           </p>
-          <button className="btn btn-primary fs-5 px-4 py-2" onClick={()=>navigate("/signup")}>
+          <button className="btn btn-primary fs-5 px-4 py-2" onClick={() => window.location.href = "https://tradenova-tradewing-frontend.onrender.com"}>
             Sign up for free
           </button>
         </div>
